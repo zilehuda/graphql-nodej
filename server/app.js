@@ -2,11 +2,11 @@ const express = require('express');
 const grapqHHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 const app = express();
 
 
-
+app.use(cors());
 
 mongoose.connect('mongodb://zilehuda:zilehuda1@ds145072.mlab.com:45072/graph-ql', { useNewUrlParser: true });
 
@@ -18,6 +18,8 @@ app.use('/graphql', grapqHHTTP({
     schema: schema,
     graphiql: true
 }));
+
+
 
 var listener  = app.listen(4000, function() {
 
