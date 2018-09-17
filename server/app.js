@@ -1,10 +1,18 @@
 const express = require('express');
 const grapqHHTTP = require('express-graphql');
 const schema = require('./schema/schema');
-
+const mongoose = require('mongoose');
 
 const app = express();
 
+
+
+
+mongoose.connect('mongodb://zilehuda:zilehuda1@ds145072.mlab.com:45072/graph-ql', { useNewUrlParser: true });
+
+mongoose.connection.once('open' ,function(){
+    console.log("connected");
+});
 
 app.use('/graphql', grapqHHTTP({
     schema: schema,
