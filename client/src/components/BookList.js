@@ -37,6 +37,7 @@ class BookList extends Component {
       </div>
     );
   }
+  
 }
 
 export default graphql(getBookQuery)(BookList);
