@@ -15,7 +15,6 @@ const client = new AppoloClient({
 class App extends Component {
   render() {
     return (
-
       <ApolloProvider client={client}>
       <div id="App">
       <h1>New GraphQl</h1>
